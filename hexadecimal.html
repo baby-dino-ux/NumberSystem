@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexadecimal System - Number Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="number-animation">
+        <span class="num">0</span><span class="num">1</span><span class="num">9</span>
+        <span class="num">A</span><span class="num">B</span><span class="num">C</span>
+        <span class="num">D</span><span class="num">E</span><span class="num">F</span>
+        <span class="num">0</span><span class="num">F</span><span class="num">A</span>
+        <span class="num">3</span><span class="num">E</span><span class="num">7</span>
+        <span class="num">2</span><span class="num">C</span><span class="num">5</span>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Menu</a>
+
+        <header class="page-header">
+            <h1>🎨 Hexadecimal System (Base-16)</h1>
+            <p class="page-subtitle">The programmer's number system: colors, memory, and debugging</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <h2>What is Hexadecimal?</h2>
+            <div class="detail-box">
+                <p>Hexadecimal (hex) is a base-16 number system using <strong>16 digits: 0-9 and A-F</strong>. Letters A-F represent values 10-15.</p>
+
+                <div class="highlight-box">
+                    <strong>💡 Why Hex is Essential:</strong>
+                    <ul>
+                        <li><strong>Compact Representation:</strong> One hex digit = 4 binary digits (nibble)</li>
+                        <li><strong>Color Codes:</strong> Web colors (#FF5733)</li>
+                        <li><strong>Memory Addresses:</strong> 0x7FFF5FBFF710</li>
+                        <li><strong>Debugging:</strong> Memory dumps, assembly code</li>
+                        <li><strong>Most Used:</strong> More practical than octal for modern programming</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>Hex Digit Meanings:</h4>
+                    <pre class="code-display">
+Hex:     0  1  2  3  4  5  6  7  8  9  A   B   C   D   E   F
+Decimal: 0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Hex Works -->
+        <section class="content-section">
+            <h2>How Hexadecimal Works</h2>
+            <div class="detail-box">
+                <h3>Place Value System</h3>
+                <p>Each position represents a power of 16.</p>
+
+                <div class="example-box">
+                    <h4>Hexadecimal Place Values:</h4>
+                    <pre class="code-display">
+Position:    5       4       3       2       1       0
+Power:       16⁵     16⁴     16³     16²     16¹     16⁰
+Value:       1048576 65536   4096    256     16      1
+                    </pre>
+                </div>
+
+                <h3>Reading Hex Numbers</h3>
+                <div class="example-box">
+                    <h4>Example: 2A3F₁₆ = ?₁₀</h4>
+                    <pre class="code-display">
+Hex:        2       A       3       F
+Decimal:    2       10      3       15
+Position:   16³     16²     16¹     16⁰
+Value:      4096    256     16      1
+
+Calculation:
+(2 × 4096) + (10 × 256) + (3 × 16) + (15 × 1)
+= 8192 + 2560 + 48 + 15
+= 10,815₁₀
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 2A3F₁₆ = 10,815₁₀</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversion: Decimal to Hex -->
+        <section class="content-section">
+            <h2>Converting Decimal to Hexadecimal</h2>
+            <div class="detail-box">
+                <h3>Method: Successive Division by 16</h3>
+
+                <div class="example-box">
+                    <h4>Example: Convert 255₁₀ to Hex</h4>
+                    <pre class="code-display">
+Step 1:  255 ÷ 16 = 15  remainder 15 (F)  ↓
+Step 2:   15 ÷ 16 = 0   remainder 15 (F)  ↓
+
+Read remainders from bottom to top: FF
+
+Verification:
+(15×16) + 15 = 240 + 15 = 255 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 255₁₀ = FF₁₆</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Convert 1000₁₀ to Hex</h4>
+                    <pre class="code-display">
+Step 1:  1000 ÷ 16 = 62  remainder 8   ↓
+Step 2:    62 ÷ 16 = 3   remainder 14 (E) ↓
+Step 3:     3 ÷ 16 = 0   remainder 3   ↓
+
+Read remainders from bottom to top: 3E8
+
+Verification:
+(3×256) + (14×16) + 8 = 768 + 224 + 8 = 1000 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 1000₁₀ = 3E8₁₆</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Binary to Hex -->
+        <section class="content-section">
+            <h2>Quick Binary ↔ Hex Conversion</h2>
+            <div class="detail-box">
+                <h3>The 4-Bit Grouping Method</h3>
+                <p><strong>KEY FACT:</strong> One hex digit = exactly 4 binary digits!</p>
+
+                <div class="example-box">
+                    <h4>Complete Hex-Binary Mapping:</h4>
+                    <pre class="code-display">
+Hex | Binary || Hex | Binary
+----|--------||-----|--------
+ 0  | 0000   ||  8  | 1000
+ 1  | 0001   ||  9  | 1001
+ 2  | 0010   ||  A  | 1010
+ 3  | 0011   ||  B  | 1011
+ 4  | 0100   ||  C  | 1100
+ 5  | 0101   ||  D  | 1101
+ 6  | 0110   ||  E  | 1110
+ 7  | 0111   ||  F  | 1111
+                    </pre>
+                </div>
+
+                <h3>Binary to Hex Conversion</h3>
+                <div class="example-box">
+                    <h4>Example: Convert 11010110101111₂ to Hex</h4>
+                    <pre class="code-display">
+Step 1: Group in sets of 4 (from right)
+        11 | 0101 | 1010 | 1111
+
+Step 2: Pad left group with zeros
+        0011 | 0101 | 1010 | 1111
+
+Step 3: Convert each group
+        0011 = 3
+        0101 = 5
+        1010 = A
+        1111 = F
+
+Answer: 35AF₁₆
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 11010110101111₂ = 35AF₁₆</p>
+                </div>
+
+                <h3>Hex to Binary Conversion</h3>
+                <div class="example-box">
+                    <h4>Example: Convert A7C₁₆ to Binary</h4>
+                    <pre class="code-display">
+Step 1: Convert each hex digit to 4 binary digits
+        A = 1010
+        7 = 0111
+        C = 1100
+
+Step 2: Concatenate
+        1010 0111 1100
+
+Answer: 101001111100₂
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> A7C₁₆ = 101001111100₂</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Codes -->
+        <section class="content-section">
+            <h2>Hex Color Codes</h2>
+            <div class="detail-box">
+                <h3>RGB Color Format: #RRGGBB</h3>
+                <p>Web colors use 6 hex digits: 2 for Red, 2 for Green, 2 for Blue (each 00-FF = 0-255).</p>
+
+                <div class="example-box">
+                    <h4>Understanding #FF5733</h4>
+                    <pre class="code-display">
+#FF5733
+ ││││└└─── Blue:  33₁₆ = 51₁₀
+ ││└└───── Green: 57₁₆ = 87₁₀
+ └└─────── Red:   FF₁₆ = 255₁₀
+
+Result: rgb(255, 87, 51) - A vibrant orange-red
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>Common Colors:</h4>
+                    <pre class="code-display">
+#000000 = Black    (0, 0, 0)
+#FFFFFF = White    (255, 255, 255)
+#FF0000 = Red      (255, 0, 0)
+#00FF00 = Green    (0, 255, 0)
+#0000FF = Blue     (0, 0, 255)
+#FFFF00 = Yellow   (255, 255, 0)
+#FF00FF = Magenta  (255, 0, 255)
+#00FFFF = Cyan     (0, 255, 255)
+                    </pre>
+                </div>
+
+                <div class="practice-box">
+                    <h4>🎨 Try These:</h4>
+                    <ul>
+                        <li>What color is #808080? (Answer: Medium gray)</li>
+                        <li>Convert RGB(128, 0, 128) to hex (Answer: #800080 = Purple)</li>
+                        <li>What's #FFA500? (Answer: Orange)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Addresses -->
+        <section class="content-section">
+            <h2>Memory Addresses</h2>
+            <div class="detail-box">
+                <h3>Why Hex for Memory?</h3>
+                <p>Memory addresses are displayed in hex because:</p>
+                <ul>
+                    <li>Compact: 64-bit address fits in 16 hex digits</li>
+                    <li>Readable: Easier than 64 binary digits</li>
+                    <li>Aligned: Easy to spot byte boundaries</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Memory Address Example:</h4>
+                    <pre class="code-display">
+C/C++ Pointer: 0x7FFF5FBFF710
+
+Breakdown:
+0x = "This is hexadecimal" (prefix)
+7FFF5FBFF710 = Actual address
+
+In Binary (64 bits):
+0111 1111 1111 1111 0101 1111 1011 1111
+1111 0111 0001 0000
+
+Much more readable in hex!
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>Memory Dump Example:</h4>
+                    <pre class="code-display">
+Address    | Hex Values        | ASCII
+-----------|-------------------|-------
+0x00400000 | 48 65 6C 6C 6F    | Hello
+0x00400005 | 20 57 6F 72 6C    | Worl
+0x0040000A | 64 21 00 00 00    | d!...
+
+Each pair of hex digits = 1 byte
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Hex Values -->
+        <section class="content-section">
+            <h2>Essential Hex Values to Memorize</h2>
+            <div class="detail-box">
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Decimal</th>
+                            <th>Hex</th>
+                            <th>Binary</th>
+                            <th>Common Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0x00</td>
+                            <td>0000 0000</td>
+                            <td>NULL, empty byte</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>0x0A</td>
+                            <td>0000 1010</td>
+                            <td>Line feed (\n)</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>0x0D</td>
+                            <td>0000 1101</td>
+                            <td>Carriage return (\r)</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>0x10</td>
+                            <td>0001 0000</td>
+                            <td>One hex digit carry</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>0x20</td>
+                            <td>0010 0000</td>
+                            <td>Space character</td>
+                        </tr>
+                        <tr>
+                            <td>127</td>
+                            <td>0x7F</td>
+                            <td>0111 1111</td>
+                            <td>DEL character, max 7-bit</td>
+                        </tr>
+                        <tr>
+                            <td>255</td>
+                            <td>0xFF</td>
+                            <td>1111 1111</td>
+                            <td>Max byte, all bits set</td>
+                        </tr>
+                        <tr>
+                            <td>256</td>
+                            <td>0x100</td>
+                            <td>1 0000 0000</td>
+                            <td>16², byte overflow</td>
+                        </tr>
+                        <tr>
+                            <td>4096</td>
+                            <td>0x1000</td>
+                            <td>-</td>
+                            <td>16³, page size</td>
+                        </tr>
+                        <tr>
+                            <td>65535</td>
+                            <td>0xFFFF</td>
+                            <td>-</td>
+                            <td>Max 16-bit unsigned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Real-World Applications -->
+        <section class="content-section">
+            <h2>Real-World Applications</h2>
+            <div class="detail-box">
+                <div class="application-grid">
+                    <div class="app-card">
+                        <h4>🎨 Web Development</h4>
+                        <ul>
+                            <li>Color codes (#FF5733)</li>
+                            <li>URL encoding (%20 = space)</li>
+                            <li>Unicode characters (U+1F600)</li>
+                            <li>Base64 encoding</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>💻 Systems Programming</h4>
+                        <ul>
+                            <li>Memory addresses (0x7FFF...)</li>
+                            <li>Pointers and references</li>
+                            <li>Memory dumps</li>
+                            <li>Binary file formats</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🔐 Security</h4>
+                        <ul>
+                            <li>Hash values (SHA-256)</li>
+                            <li>Encryption keys</li>
+                            <li>Digital signatures</li>
+                            <li>MAC addresses</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🐛 Debugging</h4>
+                        <ul>
+                            <li>Assembly code</li>
+                            <li>Register values</li>
+                            <li>Hex editors</li>
+                            <li>Network packet analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Tips -->
+        <section class="content-section">
+            <div class="tips-box">
+                <h3>💡 Pro Tips for Hexadecimal</h3>
+                <ul>
+                    <li><strong>Memorize 0-F:</strong> Know decimal equivalents 0-15 by heart</li>
+                    <li><strong>Group by 4:</strong> Binary to hex = group 4 bits at a time</li>
+                    <li><strong>0x Prefix:</strong> Most languages use 0x for hex literals (0xFF)</li>
+                    <li><strong>Color Shortcuts:</strong> #RGB expands to #RRGGBB (#F80 = #FF8800)</li>
+                    <li><strong>ASCII Trick:</strong> Hex 0x41 = 'A', 0x61 = 'a' (0x20 difference)</li>
+                    <li><strong>Powers of 16:</strong> 16, 256, 4096, 65536... (know these!)</li>
+                    <li><strong>Online Tools:</strong> Use hex calculators for complex conversions</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <div class="nav-links">
+                <a href="octal.html" class="nav-link">← Previous: Octal</a>
+                <a href="index.html" class="nav-link">Menu</a>
+                <a href="conversions.html" class="nav-link">Next: Conversions →</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

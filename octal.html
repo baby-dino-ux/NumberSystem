@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octal System - Number Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="number-animation">
+        <span class="num">0</span><span class="num">1</span><span class="num">2</span>
+        <span class="num">3</span><span class="num">4</span><span class="num">5</span>
+        <span class="num">6</span><span class="num">7</span><span class="num">0</span>
+        <span class="num">1</span><span class="num">2</span><span class="num">3</span>
+        <span class="num">4</span><span class="num">5</span><span class="num">6</span>
+        <span class="num">7</span><span class="num">0</span><span class="num">1</span>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Menu</a>
+
+        <header class="page-header">
+            <h1>🔧 Octal System (Base-8)</h1>
+            <p class="page-subtitle">Compact binary representation and Unix file permissions</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <h2>What is Octal?</h2>
+            <div class="detail-box">
+                <p>Octal is a base-8 number system that uses <strong>8 digits: 0, 1, 2, 3, 4, 5, 6, 7</strong>. It provides a more compact way to represent binary numbers, especially useful in Unix/Linux systems.</p>
+
+                <div class="highlight-box">
+                    <strong>💡 Why Octal Matters:</strong>
+                    <ul>
+                        <li><strong>File Permissions:</strong> chmod 755, 644 commands in Unix/Linux</li>
+                        <li><strong>Compact Binary:</strong> Each octal digit = exactly 3 binary digits</li>
+                        <li><strong>Embedded Systems:</strong> Used in low-level programming</li>
+                        <li><strong>Historical Importance:</strong> Common in older computer systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Octal Works -->
+        <section class="content-section">
+            <h2>How Octal Works</h2>
+            <div class="detail-box">
+                <h3>Place Value System</h3>
+                <p>Like other systems, octal uses powers of 8 for place values.</p>
+
+                <div class="example-box">
+                    <h4>Octal Place Values:</h4>
+                    <pre class="code-display">
+Position:    5       4       3       2       1       0
+Power:       8⁵      8⁴      8³      8²      8¹      8⁰
+Value:       32768   4096    512     64      8       1
+                    </pre>
+                </div>
+
+                <h3>Reading Octal Numbers</h3>
+                <div class="example-box">
+                    <h4>Example: 157₈ = ?₁₀</h4>
+                    <pre class="code-display">
+Octal:      1       5       7
+Position:   8²      8¹      8⁰
+Value:      64   +  8    +  1
+
+Calculation:
+(1 × 64) + (5 × 8) + (7 × 1)
+= 64 + 40 + 7
+= 111₁₀
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 157₈ = 111₁₀</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversion: Decimal to Octal -->
+        <section class="content-section">
+            <h2>Converting Decimal to Octal</h2>
+            <div class="detail-box">
+                <h3>Method: Successive Division by 8</h3>
+
+                <div class="example-box">
+                    <h4>Example: Convert 83₁₀ to Octal</h4>
+                    <pre class="code-display">
+Step 1:  83 ÷ 8 = 10  remainder 3  ↓
+Step 2:  10 ÷ 8 = 1   remainder 2  ↓
+Step 3:   1 ÷ 8 = 0   remainder 1  ↓
+
+Read remainders from bottom to top: 123
+
+Verification:
+(1×64) + (2×8) + (3×1) = 64 + 16 + 3 = 83 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 83₁₀ = 123₈</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Convert 511₁₀ to Octal</h4>
+                    <pre class="code-display">
+Step 1:  511 ÷ 8 = 63  remainder 7  ↓
+Step 2:   63 ÷ 8 = 7   remainder 7  ↓
+Step 3:    7 ÷ 8 = 0   remainder 7  ↓
+
+Read remainders from bottom to top: 777
+
+Verification:
+(7×64) + (7×8) + (7×1) = 448 + 56 + 7 = 511 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 511₁₀ = 777₈</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Binary to Octal Conversion -->
+        <section class="content-section">
+            <h2>Quick Binary ↔ Octal Conversion</h2>
+            <div class="detail-box">
+                <h3>The 3-Bit Grouping Method</h3>
+                <p><strong>KEY FACT:</strong> Each octal digit represents exactly 3 binary digits!</p>
+
+                <div class="example-box">
+                    <h4>Octal-Binary Mapping:</h4>
+                    <pre class="code-display">
+Octal | Binary  ||  Octal | Binary
+------|---------||---------|---------
+  0   |  000    ||    4   |  100
+  1   |  001    ||    5   |  101
+  2   |  010    ||    6   |  110
+  3   |  011    ||    7   |  111
+                    </pre>
+                </div>
+
+                <h3>Binary to Octal Conversion</h3>
+                <div class="example-box">
+                    <h4>Example: Convert 110101011₂ to Octal</h4>
+                    <pre class="code-display">
+Step 1: Group binary digits in sets of 3 (from right)
+        110 | 101 | 011
+
+Step 2: Convert each group to octal
+        110 = 6
+        101 = 5
+        011 = 3
+
+Answer: 653₈
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 110101011₂ = 653₈</p>
+                </div>
+
+                <h3>Octal to Binary Conversion</h3>
+                <div class="example-box">
+                    <h4>Example: Convert 742₈ to Binary</h4>
+                    <pre class="code-display">
+Step 1: Convert each octal digit to 3 binary digits
+        7 = 111
+        4 = 100
+        2 = 010
+
+Step 2: Concatenate
+        111 100 010
+
+Answer: 111100010₂
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 742₈ = 111100010₂</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Permissions -->
+        <section class="content-section">
+            <h2>Octal in Unix/Linux File Permissions</h2>
+            <div class="detail-box">
+                <h3>Understanding chmod with Octal</h3>
+                <p>File permissions use 3 octal digits representing Owner, Group, and Others.</p>
+
+                <div class="example-box">
+                    <h4>Permission Bits:</h4>
+                    <pre class="code-display">
+Permission | Binary | Octal | Meaning
+-----------|--------|-------|------------------
+   ---     |  000   |   0   | No permissions
+   --x     |  001   |   1   | Execute only
+   -w-     |  010   |   2   | Write only
+   -wx     |  011   |   3   | Write + Execute
+   r--     |  100   |   4   | Read only
+   r-x     |  101   |   5   | Read + Execute
+   rw-     |  110   |   6   | Read + Write
+   rwx     |  111   |   7   | All permissions
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: chmod 755 explained</h4>
+                    <pre class="code-display">
+7 = 111 = rwx  (Owner: read, write, execute)
+5 = 101 = r-x  (Group: read, execute)
+5 = 101 = r-x  (Others: read, execute)
+
+Command: chmod 755 myfile.sh
+Result: -rwxr-xr-x myfile.sh
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: chmod 644 explained</h4>
+                    <pre class="code-display">
+6 = 110 = rw-  (Owner: read, write)
+4 = 100 = r--  (Group: read only)
+4 = 100 = r--  (Others: read only)
+
+Command: chmod 644 document.txt
+Result: -rw-r--r-- document.txt
+                    </pre>
+                </div>
+
+                <div class="practice-box">
+                    <h4>🔧 Common chmod Values:</h4>
+                    <ul>
+                        <li><strong>755:</strong> Scripts/executables (owner full, others read+execute)</li>
+                        <li><strong>644:</strong> Regular files (owner read+write, others read)</li>
+                        <li><strong>600:</strong> Private files (owner only)</li>
+                        <li><strong>777:</strong> Full access (not recommended - security risk!)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Octal Values -->
+        <section class="content-section">
+            <h2>Common Octal Values</h2>
+            <div class="detail-box">
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Decimal</th>
+                            <th>Octal</th>
+                            <th>Binary</th>
+                            <th>Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>000</td>
+                            <td>No permissions</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>7</td>
+                            <td>111</td>
+                            <td>All permissions (rwx)</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>10</td>
+                            <td>001 000</td>
+                            <td>One octal digit carry</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>100</td>
+                            <td>001 000 000</td>
+                            <td>8²</td>
+                        </tr>
+                        <tr>
+                            <td>255</td>
+                            <td>377</td>
+                            <td>011 111 111</td>
+                            <td>Max byte value</td>
+                        </tr>
+                        <tr>
+                            <td>420</td>
+                            <td>644</td>
+                            <td>110 100 100</td>
+                            <td>Common file permission</td>
+                        </tr>
+                        <tr>
+                            <td>493</td>
+                            <td>755</td>
+                            <td>111 101 101</td>
+                            <td>Common executable permission</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="content-section">
+            <h2>Real-World Applications</h2>
+            <div class="detail-box">
+                <div class="application-grid">
+                    <div class="app-card">
+                        <h4>🐧 Linux/Unix Systems</h4>
+                        <ul>
+                            <li>File permission management</li>
+                            <li>Directory access control</li>
+                            <li>System administration</li>
+                            <li>Shell scripting</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>💾 Embedded Systems</h4>
+                        <ul>
+                            <li>Memory addressing</li>
+                            <li>Hardware registers</li>
+                            <li>Compact data representation</li>
+                            <li>Debugging output</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🔧 Programming</h4>
+                        <ul>
+                            <li>Escape sequences (\012)</li>
+                            <li>Character codes</li>
+                            <li>Bit manipulation</li>
+                            <li>Legacy system support</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>📊 Data Analysis</h4>
+                        <ul>
+                            <li>Binary data visualization</li>
+                            <li>Compact number display</li>
+                            <li>Historical data formats</li>
+                            <li>Debugging tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Tips -->
+        <section class="content-section">
+            <div class="tips-box">
+                <h3>💡 Pro Tips for Using Octal</h3>
+                <ul>
+                    <li><strong>Memorize 0-7:</strong> Know the binary equivalents (000 to 111)</li>
+                    <li><strong>Group by 3:</strong> Always group binary in threes for octal conversion</li>
+                    <li><strong>chmod Quick Ref:</strong> Remember 644 (files) and 755 (scripts)</li>
+                    <li><strong>Leading Zero:</strong> In many languages, 0755 means octal (watch out!)</li>
+                    <li><strong>Security:</strong> Never use 777 permissions in production!</li>
+                    <li><strong>Practice:</strong> Try converting your file permissions to understand them better</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <div class="nav-links">
+                <a href="binary.html" class="nav-link">← Previous: Binary</a>
+                <a href="index.html" class="nav-link">Menu</a>
+                <a href="hexadecimal.html" class="nav-link">Next: Hexadecimal →</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

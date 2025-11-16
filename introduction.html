@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Number Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="number-animation">
+        <span class="num">0</span><span class="num">1</span><span class="num">2</span>
+        <span class="num">3</span><span class="num">4</span><span class="num">5</span>
+        <span class="num">6</span><span class="num">7</span><span class="num">8</span>
+        <span class="num">9</span><span class="num">A</span><span class="num">B</span>
+        <span class="num">C</span><span class="num">D</span><span class="num">E</span>
+        <span class="num">F</span><span class="num">1</span><span class="num">0</span>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Menu</a>
+
+        <header class="page-header">
+            <h1>📚 Introduction to Number Systems</h1>
+            <p class="page-subtitle">Understanding the foundation of digital computing</p>
+        </header>
+
+        <!-- What are Number Systems -->
+        <section class="content-section">
+            <h2>What are Number Systems?</h2>
+            <div class="detail-box">
+                <p>A number system is a mathematical notation for representing numbers using a consistent set of digits or symbols. Different number systems use different bases (radixes) to represent quantities.</p>
+
+                <div class="highlight-box">
+                    <strong>💡 Key Concept:</strong>
+                    <p>The <strong>base</strong> (or radix) of a number system determines how many unique digits are used. For example:</p>
+                    <ul>
+                        <li><strong>Base-10 (Decimal):</strong> Uses 10 digits (0-9)</li>
+                        <li><strong>Base-2 (Binary):</strong> Uses 2 digits (0-1)</li>
+                        <li><strong>Base-8 (Octal):</strong> Uses 8 digits (0-7)</li>
+                        <li><strong>Base-16 (Hexadecimal):</strong> Uses 16 digits (0-9, A-F)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Multiple Number Systems -->
+        <section class="content-section">
+            <h2>Why Do We Need Different Number Systems?</h2>
+            <div class="detail-box">
+                <h3>1. Human Convenience (Decimal)</h3>
+                <p>We naturally use base-10 because we have 10 fingers. It's intuitive for everyday counting and mathematics.</p>
+
+                <h3>2. Computer Hardware (Binary)</h3>
+                <p>Computers use binary because electronic circuits have two states: ON (1) and OFF (0). This makes binary the most efficient system for digital electronics.</p>
+
+                <h3>3. Compact Representation (Octal & Hexadecimal)</h3>
+                <p>Hexadecimal and octal provide more compact ways to represent binary data, making it easier for programmers to read and write.</p>
+
+                <div class="example-box">
+                    <h4>Comparison Example: Representing 255</h4>
+                    <pre class="code-display">
+Decimal:        255       (3 digits)
+Binary:         11111111  (8 digits)
+Octal:          377       (3 digits)
+Hexadecimal:    FF        (2 digits)
+                    </pre>
+                    <p class="result"><strong>Notice:</strong> Hex is the most compact!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Positional Notation -->
+        <section class="content-section">
+            <h2>Understanding Positional Notation</h2>
+            <div class="detail-box">
+                <p>All modern number systems use <strong>positional notation</strong>, where the position of a digit determines its value.</p>
+
+                <div class="example-box">
+                    <h4>Example: The number 5,432 in Decimal</h4>
+                    <pre class="code-display">
+Position:    3       2       1       0
+Digit:       5       4       3       2
+Power:       10³     10²     10¹     10⁰
+Value:       5000 +  400  +  30   +  2   = 5,432
+
+Formula: (5 × 10³) + (4 × 10²) + (3 × 10¹) + (2 × 10⁰)
+                    </pre>
+                </div>
+
+                <h3>General Formula</h3>
+                <p>For any number system with base <strong>b</strong>:</p>
+                <pre class="code-display">
+Value = dₙ×bⁿ + dₙ₋₁×bⁿ⁻¹ + ... + d₁×b¹ + d₀×b⁰
+
+Where:
+  b  = base of the number system
+  dₙ = digit at position n
+  n  = position (starting from 0 on the right)
+                </pre>
+            </div>
+        </section>
+
+        <!-- The Four Main Systems -->
+        <section class="content-section">
+            <h2>The Four Main Number Systems</h2>
+            <div class="terms-grid">
+                <div class="term-card">
+                    <h3>Decimal (Base-10)</h3>
+                    <p>Digits: 0-9</p>
+                    <p>Used for: Daily life, mathematics</p>
+                    <div class="term-example">Example: 123₁₀</div>
+                </div>
+
+                <div class="term-card">
+                    <h3>Binary (Base-2)</h3>
+                    <p>Digits: 0-1</p>
+                    <p>Used for: Computer hardware, digital logic</p>
+                    <div class="term-example">Example: 1011₂</div>
+                </div>
+
+                <div class="term-card">
+                    <h3>Octal (Base-8)</h3>
+                    <p>Digits: 0-7</p>
+                    <p>Used for: File permissions, compact binary</p>
+                    <div class="term-example">Example: 755₈</div>
+                </div>
+
+                <div class="term-card">
+                    <h3>Hexadecimal (Base-16)</h3>
+                    <p>Digits: 0-9, A-F</p>
+                    <p>Used for: Memory addresses, colors, debugging</p>
+                    <div class="term-example">Example: A3F₁₆</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-World Applications -->
+        <section class="content-section">
+            <h2>Where You'll Use Number Systems</h2>
+            <div class="detail-box">
+                <div class="application-grid">
+                    <div class="app-card">
+                        <h4>💻 Software Development</h4>
+                        <ul>
+                            <li>Bitwise operations</li>
+                            <li>Memory management</li>
+                            <li>Debugging and hex dumps</li>
+                            <li>Low-level programming</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🌐 Web Development</h4>
+                        <ul>
+                            <li>Color codes (#FF5733)</li>
+                            <li>URL encoding (%20)</li>
+                            <li>Character encoding (UTF-8)</li>
+                            <li>Image processing</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🔒 Cybersecurity</h4>
+                        <ul>
+                            <li>Encryption algorithms</li>
+                            <li>Hash values</li>
+                            <li>File permissions (chmod 755)</li>
+                            <li>Network packet analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🎮 Game Development</h4>
+                        <ul>
+                            <li>Bit flags for states</li>
+                            <li>Color manipulation</li>
+                            <li>Performance optimization</li>
+                            <li>Memory-efficient storage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversion Overview -->
+        <section class="content-section">
+            <h2>Converting Between Systems</h2>
+            <div class="detail-box">
+                <p>One of the most important skills is converting numbers between different bases. Here's a quick overview:</p>
+
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Decimal</th>
+                            <th>Binary</th>
+                            <th>Octal</th>
+                            <th>Hexadecimal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0000</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0001</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>1000</td>
+                            <td>10</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>1010</td>
+                            <td>12</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>1111</td>
+                            <td>17</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>10000</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>255</td>
+                            <td>11111111</td>
+                            <td>377</td>
+                            <td>FF</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="practice-box">
+                    <h4>📝 Quick Practice:</h4>
+                    <p>Before diving into specific systems, try to understand:</p>
+                    <ul>
+                        <li>Why 10 in decimal is A in hexadecimal</li>
+                        <li>Why binary numbers get long quickly</li>
+                        <li>How hexadecimal is more compact than binary</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Path -->
+        <section class="content-section">
+            <div class="tips-box">
+                <h3>💡 Recommended Learning Path</h3>
+                <ul>
+                    <li><strong>Start with Decimal:</strong> Understand how the system you know works</li>
+                    <li><strong>Learn Binary:</strong> The foundation of computing</li>
+                    <li><strong>Move to Hexadecimal:</strong> Most practical for programming</li>
+                    <li><strong>Explore Octal:</strong> Useful for specific applications</li>
+                    <li><strong>Practice Conversions:</strong> The key to mastery</li>
+                    <li><strong>Apply in Projects:</strong> Use what you learn in real code</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Menu</a>
+                <a href="decimal.html" class="nav-link">Next: Decimal →</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

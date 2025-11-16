@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary System - Number Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="number-animation">
+        <span class="num">0</span><span class="num">1</span><span class="num">0</span>
+        <span class="num">1</span><span class="num">0</span><span class="num">1</span>
+        <span class="num">1</span><span class="num">0</span><span class="num">0</span>
+        <span class="num">1</span><span class="num">1</span><span class="num">0</span>
+        <span class="num">1</span><span class="num">0</span><span class="num">1</span>
+        <span class="num">0</span><span class="num">0</span><span class="num">1</span>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Menu</a>
+
+        <header class="page-header">
+            <h1>💾 Binary System (Base-2)</h1>
+            <p class="page-subtitle">The fundamental language of all digital computers</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <h2>What is Binary?</h2>
+            <div class="detail-box">
+                <p>Binary is a base-2 number system that uses only two digits: <strong>0</strong> and <strong>1</strong>. This simple system is the foundation of all modern computing because it directly represents the two states of electronic circuits: <strong>OFF (0)</strong> and <strong>ON (1)</strong>.</p>
+
+                <div class="highlight-box">
+                    <strong>💡 Why Binary Matters:</strong>
+                    <ul>
+                        <li>Every piece of data in your computer—text, images, videos, programs—is ultimately stored as binary</li>
+                        <li>CPUs process billions of binary operations per second</li>
+                        <li>Understanding binary is essential for low-level programming, networking, and computer architecture</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Binary Works -->
+        <section class="content-section">
+            <h2>How Binary Works</h2>
+            <div class="detail-box">
+                <h3>Place Value System</h3>
+                <p>Just like decimal uses powers of 10, binary uses powers of 2. Each position represents a power of 2, starting from the right (2⁰).</p>
+
+                <div class="example-box">
+                    <h4>Binary Place Values:</h4>
+                    <pre class="code-display">
+Position:    7      6      5      4      3      2      1      0
+Power:       2⁷     2⁶     2⁵     2⁴     2³     2²     2¹     2⁰
+Value:       128    64     32     16     8      4      2      1
+                    </pre>
+                </div>
+
+                <h3>Reading Binary Numbers</h3>
+                <div class="example-box">
+                    <h4>Example: 1011₂ (Binary) = ?₁₀ (Decimal)</h4>
+                    <pre class="code-display">
+Binary:     1      0      1      1
+Position:   2³     2²     2¹     2⁰
+Value:      8   +  0   +  2   +  1   = 11₁₀
+
+Step-by-step:
+1 × 2³ = 1 × 8 = 8
+0 × 2² = 0 × 4 = 0
+1 × 2¹ = 1 × 2 = 2
+1 × 2⁰ = 1 × 1 = 1
+           Total = 11
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 1011₂ = 11₁₀</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversion: Decimal to Binary -->
+        <section class="content-section">
+            <h2>Converting Decimal to Binary</h2>
+            <div class="detail-box">
+                <h3>Method: Successive Division by 2</h3>
+                <p>To convert a decimal number to binary, repeatedly divide by 2 and track the remainders. The remainders, read from bottom to top, give you the binary representation.</p>
+
+                <div class="example-box">
+                    <h4>Example: Convert 25₁₀ to Binary</h4>
+                    <pre class="code-display">
+Step 1:  25 ÷ 2 = 12  remainder 1  ↓
+Step 2:  12 ÷ 2 = 6   remainder 0  ↓
+Step 3:   6 ÷ 2 = 3   remainder 0  ↓
+Step 4:   3 ÷ 2 = 1   remainder 1  ↓
+Step 5:   1 ÷ 2 = 0   remainder 1  ↓
+
+Read remainders from bottom to top: 11001
+
+Verification:
+1×16 + 1×8 + 0×4 + 0×2 + 1×1 = 16 + 8 + 1 = 25 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 25₁₀ = 11001₂</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Binary Terminology -->
+        <section class="content-section">
+            <h2>Important Binary Terms</h2>
+            <div class="terms-grid">
+                <div class="term-card">
+                    <h3>Bit</h3>
+                    <p><strong>Bi</strong>nary digi<strong>t</strong></p>
+                    <p>A single binary digit (0 or 1)</p>
+                    <div class="term-example">Example: 1</div>
+                </div>
+
+                <div class="term-card">
+                    <h3>Nibble</h3>
+                    <p>4 bits</p>
+                    <p>Half of a byte</p>
+                    <div class="term-example">Example: 1011</div>
+                </div>
+
+                <div class="term-card">
+                    <h3>Byte</h3>
+                    <p>8 bits</p>
+                    <p>Standard unit of computer storage</p>
+                    <div class="term-example">Example: 11010110</div>
+                </div>
+
+                <div class="term-card">
+                    <h3>Word</h3>
+                    <p>16, 32, or 64 bits</p>
+                    <p>Depends on CPU architecture</p>
+                    <div class="term-example">Example: 32-bit = 4 bytes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-World Applications -->
+        <section class="content-section">
+            <h2>Real-World Applications</h2>
+            <div class="detail-box">
+                <div class="application-grid">
+                    <div class="app-card">
+                        <h4>💻 Programming</h4>
+                        <ul>
+                            <li>Bitwise operations (AND, OR, XOR, NOT)</li>
+                            <li>Bit flags and masking</li>
+                            <li>Memory optimization</li>
+                            <li>Boolean logic</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🌐 Networking</h4>
+                        <ul>
+                            <li>IP address calculations</li>
+                            <li>Subnet masks (e.g., 255.255.255.0 = 11111111.11111111.11111111.00000000)</li>
+                            <li>MAC addresses</li>
+                            <li>Network protocols</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🔐 Security</h4>
+                        <ul>
+                            <li>Encryption algorithms</li>
+                            <li>Hash functions</li>
+                            <li>File permissions</li>
+                            <li>Access control</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🎮 Graphics</h4>
+                        <ul>
+                            <li>Pixel data representation</li>
+                            <li>Image compression</li>
+                            <li>Color depth (8-bit, 16-bit, 24-bit)</li>
+                            <li>Sprite manipulation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Binary Values -->
+        <section class="content-section">
+            <h2>Common Binary Values</h2>
+            <div class="detail-box">
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Decimal</th>
+                            <th>Binary</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0000</td>
+                            <td>All bits off</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0001</td>
+                            <td>Least significant bit</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>0010</td>
+                            <td>Power of 2</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>0100</td>
+                            <td>Power of 2</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>1000</td>
+                            <td>Power of 2</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>1111</td>
+                            <td>4 bits all on (nibble)</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>10000</td>
+                            <td>Power of 2, 5 bits</td>
+                        </tr>
+                        <tr>
+                            <td>255</td>
+                            <td>11111111</td>
+                            <td>8 bits all on (byte)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <div class="nav-links">
+                <a href="decimal.html" class="nav-link">← Previous: Decimal</a>
+                <a href="index.html" class="nav-link">Menu</a>
+                <a href="octal.html" class="nav-link">Next: Octal →</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

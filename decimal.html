@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal System - Number Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="number-animation">
+        <span class="num">0</span><span class="num">1</span><span class="num">2</span>
+        <span class="num">3</span><span class="num">4</span><span class="num">5</span>
+        <span class="num">6</span><span class="num">7</span><span class="num">8</span>
+        <span class="num">9</span><span class="num">0</span><span class="num">1</span>
+        <span class="num">2</span><span class="num">3</span><span class="num">4</span>
+        <span class="num">5</span><span class="num">6</span><span class="num">7</span>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Menu</a>
+
+        <header class="page-header">
+            <h1>🔢 Decimal System (Base-10)</h1>
+            <p class="page-subtitle">The number system we use every day</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <h2>What is the Decimal System?</h2>
+            <div class="detail-box">
+                <p>The decimal system (also called base-10) is the standard number system used by humans worldwide. It uses <strong>10 unique digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9</strong>.</p>
+
+                <div class="highlight-box">
+                    <strong>💡 Why Base-10?</strong>
+                    <ul>
+                        <li>Humans have 10 fingers, making base-10 natural for counting</li>
+                        <li>Used for thousands of years across cultures</li>
+                        <li>The foundation of our mathematical education</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Decimal Works -->
+        <section class="content-section">
+            <h2>How the Decimal System Works</h2>
+            <div class="detail-box">
+                <h3>Positional Notation</h3>
+                <p>Each digit's value depends on its position. Moving left, each position is worth 10 times more than the previous position.</p>
+
+                <div class="example-box">
+                    <h4>Decimal Place Values:</h4>
+                    <pre class="code-display">
+Position:    3       2       1       0
+Power:       10³     10²     10¹     10⁰
+Value:       1000    100     10      1
+Name:        Thousands Hundreds Tens Ones
+                    </pre>
+                </div>
+
+                <h3>Breaking Down a Number</h3>
+                <div class="example-box">
+                    <h4>Example: 3,574₁₀</h4>
+                    <pre class="code-display">
+Digit:       3       5       7       4
+Position:    10³     10²     10¹     10⁰
+Value:       3000 +  500  +  70   +  4   = 3,574
+
+Expanded Form:
+(3 × 10³) + (5 × 10²) + (7 × 10¹) + (4 × 10⁰)
+= (3 × 1000) + (5 × 100) + (7 × 10) + (4 × 1)
+= 3000 + 500 + 70 + 4
+= 3,574
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Converting FROM Decimal -->
+        <section class="content-section">
+            <h2>Converting Decimal to Other Systems</h2>
+            <div class="detail-box">
+                <h3>General Method: Repeated Division</h3>
+                <p>To convert decimal to any base, repeatedly divide by the target base and collect remainders.</p>
+
+                <div class="example-box">
+                    <h4>Example: Convert 42₁₀ to Binary (Base-2)</h4>
+                    <pre class="code-display">
+Step 1:  42 ÷ 2 = 21  remainder 0  ↓
+Step 2:  21 ÷ 2 = 10  remainder 1  ↓
+Step 3:  10 ÷ 2 = 5   remainder 0  ↓
+Step 4:   5 ÷ 2 = 2   remainder 1  ↓
+Step 5:   2 ÷ 2 = 1   remainder 0  ↓
+Step 6:   1 ÷ 2 = 0   remainder 1  ↓
+
+Read remainders from bottom to top: 101010
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 42₁₀ = 101010₂</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Converting TO Decimal -->
+        <section class="content-section">
+            <h2>Converting Other Systems to Decimal</h2>
+            <div class="detail-box">
+                <h3>Method: Multiply and Add</h3>
+                <p>Multiply each digit by its positional value (base^position) and sum them all.</p>
+
+                <div class="example-box">
+                    <h4>Example: Convert 1A3₁₆ (Hexadecimal) to Decimal</h4>
+                    <pre class="code-display">
+Hex:        1       A       3
+Decimal:    1       10      3
+Position:   16²     16¹     16⁰
+Values:     256     16      1
+
+Calculation:
+(1 × 256) + (10 × 16) + (3 × 1)
+= 256 + 160 + 3
+= 419
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 1A3₁₆ = 419₁₀</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decimal in Computing -->
+        <section class="content-section">
+            <h2>Decimal in Computer Science</h2>
+            <div class="detail-box">
+                <div class="application-grid">
+                    <div class="app-card">
+                        <h4>💻 User Interfaces</h4>
+                        <ul>
+                            <li>Displaying numbers to users</li>
+                            <li>Processing user input</li>
+                            <li>Financial calculations</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🔢 Mathematics</h4>
+                        <ul>
+                            <li>Mathematical computations</li>
+                            <li>Algorithm complexity</li>
+                            <li>Data analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>🌐 Networking</h4>
+                        <ul>
+                            <li>IP addresses (192.168.1.1)</li>
+                            <li>Port numbers</li>
+                            <li>File sizes</li>
+                        </ul>
+                    </div>
+
+                    <div class="app-card">
+                        <h4>📊 Data</h4>
+                        <ul>
+                            <li>Database values</li>
+                            <li>CSV and JSON data</li>
+                            <li>API responses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <div class="nav-links">
+                <a href="introduction.html" class="nav-link">← Previous: Introduction</a>
+                <a href="index.html" class="nav-link">Menu</a>
+                <a href="binary.html" class="nav-link">Next: Binary →</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
