@@ -20,7 +20,7 @@
         <a href="index.html" class="back-btn">← Back to Menu</a>
 
         <header class="page-header">
-            <h1>💾 Binary System (Base-2)</h1>
+            <h1>Binary System (Base-2)</h1>
             <p class="page-subtitle">The fundamental language of all digital computers</p>
         </header>
 
@@ -33,9 +33,9 @@
                 <div class="highlight-box">
                     <strong>💡 Why Binary Matters:</strong>
                     <ul>
-                        <li>Every piece of data in your computer—text, images, videos, programs—is ultimately stored as binary</li>
-                        <li>CPUs process billions of binary operations per second</li>
-                        <li>Understanding binary is essential for low-level programming, networking, and computer architecture</li>
+                        <li>Every piece of data in computers is ultimately stored as binary</li>
+                        <li>Electronic circuits can easily represent two states (on/off, high/low voltage)</li>
+                        <li>Binary forms the foundation for understanding all other number systems in computing</li>
                     </ul>
                 </div>
             </div>
@@ -74,6 +74,19 @@ Step-by-step:
                     </pre>
                     <p class="result"><strong>Answer:</strong> 1011₂ = 11₁₀</p>
                 </div>
+
+                <div class="example-box">
+                    <h4>Example: 11010110₂ = ?₁₀</h4>
+                    <pre class="code-display">
+Binary:     1   1   0   1   0   1   1   0
+Position:   2⁷  2⁶  2⁵  2⁴  2³  2²  2¹  2⁰
+Value:      128 64  0   16  0   4   2   0
+
+Calculation:
+128 + 64 + 16 + 4 + 2 = 214
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 11010110₂ = 214₁₀</p>
+                </div>
             </div>
         </section>
 
@@ -99,6 +112,25 @@ Verification:
 1×16 + 1×8 + 0×4 + 0×2 + 1×1 = 16 + 8 + 1 = 25 ✓
                     </pre>
                     <p class="result"><strong>Answer:</strong> 25₁₀ = 11001₂</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Convert 100₁₀ to Binary</h4>
+                    <pre class="code-display">
+Step 1:  100 ÷ 2 = 50  remainder 0  ↓
+Step 2:   50 ÷ 2 = 25  remainder 0  ↓
+Step 3:   25 ÷ 2 = 12  remainder 1  ↓
+Step 4:   12 ÷ 2 = 6   remainder 0  ↓
+Step 5:    6 ÷ 2 = 3   remainder 0  ↓
+Step 6:    3 ÷ 2 = 1   remainder 1  ↓
+Step 7:    1 ÷ 2 = 0   remainder 1  ↓
+
+Read remainders from bottom to top: 1100100
+
+Verification:
+64 + 32 + 4 = 100 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 100₁₀ = 1100100₂</p>
                 </div>
             </div>
         </section>
@@ -133,54 +165,6 @@ Verification:
                     <p>16, 32, or 64 bits</p>
                     <p>Depends on CPU architecture</p>
                     <div class="term-example">Example: 32-bit = 4 bytes</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Real-World Applications -->
-        <section class="content-section">
-            <h2>Real-World Applications</h2>
-            <div class="detail-box">
-                <div class="application-grid">
-                    <div class="app-card">
-                        <h4>💻 Programming</h4>
-                        <ul>
-                            <li>Bitwise operations (AND, OR, XOR, NOT)</li>
-                            <li>Bit flags and masking</li>
-                            <li>Memory optimization</li>
-                            <li>Boolean logic</li>
-                        </ul>
-                    </div>
-
-                    <div class="app-card">
-                        <h4>🌐 Networking</h4>
-                        <ul>
-                            <li>IP address calculations</li>
-                            <li>Subnet masks (e.g., 255.255.255.0 = 11111111.11111111.11111111.00000000)</li>
-                            <li>MAC addresses</li>
-                            <li>Network protocols</li>
-                        </ul>
-                    </div>
-
-                    <div class="app-card">
-                        <h4>🔐 Security</h4>
-                        <ul>
-                            <li>Encryption algorithms</li>
-                            <li>Hash functions</li>
-                            <li>File permissions</li>
-                            <li>Access control</li>
-                        </ul>
-                    </div>
-
-                    <div class="app-card">
-                        <h4>🎮 Graphics</h4>
-                        <ul>
-                            <li>Pixel data representation</li>
-                            <li>Image compression</li>
-                            <li>Color depth (8-bit, 16-bit, 24-bit)</li>
-                            <li>Sprite manipulation</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
@@ -232,6 +216,21 @@ Verification:
                             <td>16</td>
                             <td>10000</td>
                             <td>Power of 2, 5 bits</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>11111</td>
+                            <td>5 bits all on</td>
+                        </tr>
+                        <tr>
+                            <td>63</td>
+                            <td>111111</td>
+                            <td>6 bits all on</td>
+                        </tr>
+                        <tr>
+                            <td>127</td>
+                            <td>1111111</td>
+                            <td>7 bits all on</td>
                         </tr>
                         <tr>
                             <td>255</td>

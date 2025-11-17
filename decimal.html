@@ -20,7 +20,7 @@
         <a href="index.html" class="back-btn">← Back to Menu</a>
 
         <header class="page-header">
-            <h1>🔢 Decimal System (Base-10)</h1>
+            <h1>Decimal System (Base-10)</h1>
             <p class="page-subtitle">The number system we use every day</p>
         </header>
 
@@ -97,6 +97,35 @@ Read remainders from bottom to top: 101010
                     </pre>
                     <p class="result"><strong>Answer:</strong> 42₁₀ = 101010₂</p>
                 </div>
+
+                <div class="example-box">
+                    <h4>Example: Convert 83₁₀ to Octal (Base-8)</h4>
+                    <pre class="code-display">
+Step 1:  83 ÷ 8 = 10  remainder 3  ↓
+Step 2:  10 ÷ 8 = 1   remainder 2  ↓
+Step 3:   1 ÷ 8 = 0   remainder 1  ↓
+
+Read remainders from bottom to top: 123
+
+Verification:
+(1×64) + (2×8) + (3×1) = 64 + 16 + 3 = 83 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 83₁₀ = 123₈</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Convert 255₁₀ to Hexadecimal (Base-16)</h4>
+                    <pre class="code-display">
+Step 1:  255 ÷ 16 = 15  remainder 15 (F)  ↓
+Step 2:   15 ÷ 16 = 0   remainder 15 (F)  ↓
+
+Read remainders from bottom to top: FF
+
+Verification:
+(15×16) + 15 = 240 + 15 = 255 ✓
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 255₁₀ = FF₁₆</p>
+                </div>
             </div>
         </section>
 
@@ -106,6 +135,36 @@ Read remainders from bottom to top: 101010
             <div class="detail-box">
                 <h3>Method: Multiply and Add</h3>
                 <p>Multiply each digit by its positional value (base^position) and sum them all.</p>
+
+                <div class="example-box">
+                    <h4>Example: Convert 1011₂ (Binary) to Decimal</h4>
+                    <pre class="code-display">
+Binary:     1       0       1       1
+Position:   2³      2²      2¹      2⁰
+Value:      8   +   0   +   2   +   1   = 11
+
+Calculation:
+(1 × 8) + (0 × 4) + (1 × 2) + (1 × 1)
+= 8 + 0 + 2 + 1
+= 11
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 1011₂ = 11₁₀</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Convert 157₈ (Octal) to Decimal</h4>
+                    <pre class="code-display">
+Octal:      1       5       7
+Position:   8²      8¹      8⁰
+Value:      64   +  8    +  1
+
+Calculation:
+(1 × 64) + (5 × 8) + (7 × 1)
+= 64 + 40 + 7
+= 111
+                    </pre>
+                    <p class="result"><strong>Answer:</strong> 157₈ = 111₁₀</p>
+                </div>
 
                 <div class="example-box">
                     <h4>Example: Convert 1A3₁₆ (Hexadecimal) to Decimal</h4>
@@ -121,50 +180,6 @@ Calculation:
 = 419
                     </pre>
                     <p class="result"><strong>Answer:</strong> 1A3₁₆ = 419₁₀</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Decimal in Computing -->
-        <section class="content-section">
-            <h2>Decimal in Computer Science</h2>
-            <div class="detail-box">
-                <div class="application-grid">
-                    <div class="app-card">
-                        <h4>💻 User Interfaces</h4>
-                        <ul>
-                            <li>Displaying numbers to users</li>
-                            <li>Processing user input</li>
-                            <li>Financial calculations</li>
-                        </ul>
-                    </div>
-
-                    <div class="app-card">
-                        <h4>🔢 Mathematics</h4>
-                        <ul>
-                            <li>Mathematical computations</li>
-                            <li>Algorithm complexity</li>
-                            <li>Data analysis</li>
-                        </ul>
-                    </div>
-
-                    <div class="app-card">
-                        <h4>🌐 Networking</h4>
-                        <ul>
-                            <li>IP addresses (192.168.1.1)</li>
-                            <li>Port numbers</li>
-                            <li>File sizes</li>
-                        </ul>
-                    </div>
-
-                    <div class="app-card">
-                        <h4>📊 Data</h4>
-                        <ul>
-                            <li>Database values</li>
-                            <li>CSV and JSON data</li>
-                            <li>API responses</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
